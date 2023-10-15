@@ -38,13 +38,16 @@ class ConfectioneryFactory
 
     public function getTotalProductionCost()
     {
-        $totalCost = 0;
+        $totalCosts = [];
+
         foreach ($this->productionCounts as $productName => $count) {
             $product = $this->getProductByName($productName);
-            $totalCost += $product->getCost() * $count;
+            $totalCosts[$productName] = $product->getCost() * $count;
         }
-        return $totalCost;
+
+        return $totalCosts;
     }
+
 
     protected function getProductByName($name)
     {

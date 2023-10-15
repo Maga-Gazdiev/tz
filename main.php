@@ -30,12 +30,12 @@ $factory->produce(12);
 $productionCounts = $factory->getProductionCounts();
 $totalCost = $factory->getTotalProductionCost();
 
-echo "Общее количество произведенных изделий:\n";
-foreach ($productionCounts as $productName => $count) {
-    echo "$productName: $count\n";
+echo "Стоимость каждого товара (после добавления нового оборудования):\n";
+foreach ($totalCost as $productName => $cost) {
+    echo "$productName: $cost\n";
 }
 
-echo "Общая стоимость производства: $totalCost\n";
+echo "Общая стоимость производства: " . array_sum($totalCost) . "\n";
 
 $equipmentIceCream2 = new Equipment('Машина для приготовления мороженого 2', 300);
 $equipmentPastry2 = new Equipment('Кондитерская машина 2', 70);
@@ -48,9 +48,10 @@ $factory->produce(12);
 $productionCounts = $factory->getProductionCounts();
 $totalCost = $factory->getTotalProductionCost();
 
-echo "Общий объем производства (после добавления нового оборудования):\n";
-foreach ($productionCounts as $productName => $count) {
-    echo "$productName: $count\n";
+echo "\nСтоимость каждого товара (после добавления нового оборудования):\n";
+foreach ($totalCost as $productName => $cost) {
+    echo "$productName: $cost\n";
 }
 
-echo "Общая стоимость производства (после добавления нового оборудования): $totalCost\n";
+echo "Общая стоимость производства (после добавления нового оборудования): " . array_sum($totalCost) . "\n";
+

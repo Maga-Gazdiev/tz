@@ -24,4 +24,4 @@ class Equipment implements EquipmentInterface
     {
         return $this->productionRate;
     }
-}
+} 
