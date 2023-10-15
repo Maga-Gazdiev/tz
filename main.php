@@ -1,8 +1,11 @@
 <?php
 
-require 'Equipment.php';
-require 'Product.php';
-require 'ConfectioneryFactory.php';
+require 'vendor/autoload.php';
+
+use Confectionery\Classes\ConfectioneryFactory;
+use Confectionery\Classes\Equipment;
+use Confectionery\Classes\Product;
+
 
 $equipmentChocolate = new Equipment('Шоколадная машина', 100);
 $equipmentIceCream = new Equipment('Машина для приготовления мороженого', 200);

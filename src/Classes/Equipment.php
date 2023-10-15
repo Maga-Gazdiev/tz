@@ -1,6 +1,10 @@
 <?php
 
-class Equipment 
+namespace Confectionery\Classes;
+
+use Confectionery\Interfaces\EquipmentInterface;
+
+class Equipment implements EquipmentInterface
 {
     protected $id;
     protected $productionRate;

@@ -1,5 +1,9 @@
 <?php
 
+namespace Confectionery\Classes;
+
+use Confectionery\Interfaces\EquipmentInterface;
+use Confectionery\Interfaces\ProductInterface;
 
 class ConfectioneryFactory
 {
@@ -7,12 +11,12 @@ class ConfectioneryFactory
     protected $products = [];
     protected $productionCounts = [];
 
-    public function addEquipment(Equipment $equipment)
+    public function addEquipment(EquipmentInterface $equipment)
     {
         $this->equipment[] = $equipment;
     }
 
-    public function addProduct(Product $product)
+    public function addProduct(ProductInterface $product)
     {
         $this->products[] = $product;
         $this->productionCounts[$product->getName()] = 0;
@@ -34,12 +38,12 @@ class ConfectioneryFactory
 
     public function getTotalProductionCost()
     {
-        $totalCost = 0;
+        $totalCosts = [];
         foreach ($this->productionCounts as $productName => $count) {
             $product = $this->getProductByName($productName);
-            $totalCost += $product->getCost() * $count;
+            $totalCosts[$productName] = $product->getCost() * $count;
         }
-        return $totalCost;
+        return $totalCosts;
     }
 
     protected function getProductByName($name)

@@ -1,6 +1,10 @@
 <?php
 
-class Product 
+namespace Confectionery\Classes;
+
+use Confectionery\Interfaces\ProductInterface;
+
+class Product implements ProductInterface
 {
     protected $name;
     protected $shelfLife;
