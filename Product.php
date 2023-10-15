@@ -1,6 +1,6 @@
 <?php
 
-class Product //Продукция
+class Product 
 {
     protected $name;
     protected $shelfLife;

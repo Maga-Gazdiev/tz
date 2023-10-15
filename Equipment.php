@@ -1,6 +1,6 @@
 <?php
 
-class Equipment //Оборудование
+class Equipment 
 {
     protected $id;
     protected $productionRate;
